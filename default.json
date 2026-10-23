@@ -4,5 +4,17 @@
   "extends": [
     "config:recommended"
   ],
-  "platformAutomerge": true
+  "platformAutomerge": true,
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "YAML values annotated with a '# renovate:' comment on the line above; plain versions only, so annotated image refs are left to the docker/kubernetes managers",
+      "managerFilePatterns": [
+        "/\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "#\\s*renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)(?: packageName=(?<packageName>\\S+))?(?: versioning=(?<versioning>\\S+))?(?: extractVersion=(?<extractVersion>\\S+))?(?: registryUrl=(?<registryUrl>\\S+))?[ \\t]*\\n[ \\t]*[\\w.-]+:[ \\t]*[\"']?(?<currentValue>[^\"'\\s/:@]+)[\"']?[ \\t]*(?:\\n|$)"
+      ]
+    }
+  ]
 }
