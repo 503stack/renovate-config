@@ -1,5 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "Automerge every update once checks pass; extend with github>503stack/renovate-config:automerge",
+  "description": "Deprecated: automerge is now in the default preset; kept so existing extends keep resolving",
   "automerge": true
 }
