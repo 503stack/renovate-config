@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Automerge every update once checks pass; extend with local>503stack/renovate-config:automerge",
+  "automerge": true
+}

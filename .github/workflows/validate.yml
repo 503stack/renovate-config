@@ -1,0 +1,28 @@
+name: validate
+
+# A broken preset silently stops version bumps in every repo that extends it.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  # renovate: datasource=npm depName=renovate
+  RENOVATE_VERSION: 44.181.0
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Validate presets
+        run: npx --yes --package "renovate@$RENOVATE_VERSION" -- renovate-config-validator --strict default.json automerge.json renovate.json

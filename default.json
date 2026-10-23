@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "503stack org-wide defaults; extend with local>503stack/renovate-config",
+  "extends": [
+    "config:recommended"
+  ],
+  "platformAutomerge": true
+}
