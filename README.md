@@ -4,8 +4,8 @@ Shared [Renovate](https://docs.renovatebot.com/) presets for the 503stack org.
 
 | Preset | File | What it does |
 | --- | --- | --- |
-| `github>503stack/renovate-config` | `default.json` | `config:recommended` + `platformAutomerge`, runs at any time, one PR per dependency straight to the newest version (majors included), annotated YAML versions (below) |
-| `github>503stack/renovate-config:automerge` | `automerge.json` | Automerge every update once checks pass |
+| `github>503stack/renovate-config` | `default.json` | `config:recommended`, automerge once checks pass (`platformAutomerge`), runs at any time, one PR per dependency straight to the newest version (majors included), annotated YAML versions (below) |
+| `github>503stack/renovate-config:automerge` | `automerge.json` | Deprecated no-op; automerge is in the default |
 
 ## Usage
 
@@ -20,8 +20,9 @@ Shared [Renovate](https://docs.renovatebot.com/) presets for the 503stack org.
 }
 ```
 
-Add `"github>503stack/renovate-config:automerge"` to opt in to automerge. Repo-specific
-managers and `packageRules` stay in the repo's own `renovate.json`.
+To opt out of automerge (or keep majors manual), override `automerge` or add a `packageRules`
+entry in the repo. Repo-specific managers and `packageRules` stay in the repo's own
+`renovate.json`.
 
 ## Annotated versions
 
