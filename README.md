@@ -4,7 +4,7 @@ Shared [Renovate](https://docs.renovatebot.com/) presets for the 503stack org.
 
 | Preset | File | What it does |
 | --- | --- | --- |
-| `github>503stack/renovate-config` | `default.json` | `config:recommended` + `platformAutomerge` + annotated YAML versions (below) |
+| `github>503stack/renovate-config` | `default.json` | `config:recommended` + `platformAutomerge`, runs at any time, one PR per dependency straight to the newest version (majors included), annotated YAML versions (below) |
 | `github>503stack/renovate-config:automerge` | `automerge.json` | Automerge every update once checks pass |
 
 ## Usage
