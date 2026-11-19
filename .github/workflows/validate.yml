@@ -9,7 +9,7 @@ on:
 
 env:
   # renovate: datasource=npm depName=renovate
-  RENOVATE_VERSION: 44.252.8
+  RENOVATE_VERSION: 44.253.0
 
 permissions:
   contents: read
